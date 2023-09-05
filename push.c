@@ -15,20 +15,20 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL)
 	{
-		fprintf(stderr, "L%u: usage: push integer S\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(NULL, " \t\r\n'$'");
 	if (token == NULL)
 	{
-		fprintf(stderr, "L%u: usage: push integer T\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 /*	printf("Token: %s\n", token); */
 	value = atoi(token);
 	if (strspn(token, "0123456789+-") != strlen(token))
 	{
-		fprintf(stderr, "L%u: usage: push integer \n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
